@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from flask_restful import Resource
+from flask import Resource
 
 class HealthCheck(Resource):
     def get(self):
