@@ -2,22 +2,22 @@
 FROM python:3.11-slim
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
 # Set work directory
 WORKDIR /app
 
 # Install dependencies
-COPY requirements.txt .
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+COPY requirements.txt ./
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 
-# Copy project
+# Copy the project files
 COPY . .
 
-# Expose port
+# Expose the port the app runs on
 EXPOSE 5000
 
-# Run the application
+# Command to run the application
 CMD ["python", "app/app.py"]
