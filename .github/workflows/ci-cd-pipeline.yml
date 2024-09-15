@@ -65,7 +65,7 @@ jobs:
 
     - name: Run migrations
       run: |
-        services=("trading" "wallet" "account-management")
+        services=("api-gateway" "account-service" "centralized-logging" "notification-service" "trading-service" "wallet-service")
         for service in "${services[@]}"; do
           cd $service
           if [ -f "migrations" ]; then
