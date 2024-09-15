@@ -24,7 +24,7 @@ jobs:
         services=("api-gateway" "account-service" "centralized-logging" "notification-service" "trading-service" "wallet-service")
         for service in "${services[@]}"; do
           docker build -t chanuka734/$service:latest ./$service
-          docker push chanuka1234/$service:latest
+          docker push chanuka734/$service:latest
         done
 
     - name: Set up Kubernetes CLI
