@@ -25,6 +25,7 @@ metadata:
 spec:
   selector:
     app: account-service
+  type: LoadBalancer  # To expose the service externally
   ports:
     - protocol: TCP
       port: 5003
